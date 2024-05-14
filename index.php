@@ -11,6 +11,16 @@
 <?php include("includes/header.html");?>
 <?php include("includes/nav.html");?>
 <main>
+
+<div id="search-card">
+  <h2>Find Your Property...</h2>
+  <form action="properties.php" method="get" id="properties-search">
+    <input type="search" name="search" required>
+    <button type="submit">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+</div>
 <h3>Welcome to the Gift Company</h3>
 This is the home page and it needs content....
 </main>

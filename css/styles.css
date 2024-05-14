@@ -25,6 +25,28 @@ main {background-color: #c6e1e0;
 	
 main a {background-color: #63acab; color: white; text-decoration:none; padding:5px;}
 main a:hover {background-color: #878787; color: white;}
+
+#search-card {
+  background-color: white;
+  text-align: center;
+  margin: 0 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  
+  input[type=search] {
+    width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  button[type=submit] {
+    background: none;
+    border: none;
+    position: relative;
+    left: -35px;
+  }
+}
+
 		
 footer{background-color: #ffffff;
     height: 30px;
