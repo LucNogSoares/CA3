@@ -26,6 +26,13 @@ main {background-color: #c6e1e0;
 main a {background-color: #63acab; color: white; text-decoration:none; padding:5px;}
 main a:hover {background-color: #878787; color: white;}
 
+.pageTitleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 #search-card {
   background-color: white;
   text-align: center;
@@ -45,6 +52,16 @@ main a:hover {background-color: #878787; color: white;}
     position: relative;
     left: -35px;
   }
+}
+
+.base-button {
+  background-color:#b4b4b8 !important;
+  height: 100%;
+}
+
+.base-button:hover {
+  transition: 1s !important;
+  background-color:#939396 !important;
 }
 
 .card-group {
@@ -117,14 +134,45 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   background-color:#939396;
 }
 
-.card-top .category {
+.category {
   border: 1px solid black;
   padding: 4px;
   margin: 10px 64px;
   text-align: center;
 }
 
+.property-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  img {
+    width: 60%;
+  }
+
+  .property-info {
+    width: 40%;
+    padding: 0 10px;
+
+    iframe {
+      width: 90%;
+    }
+  }
+}
+
 @media (max-width: 768px){
+
+  .property-details {
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
+  
+    .property-info {
+      width: 100%;
+      margin: 20px;
+    }
+  }
 
   .card-group {
       width: 100%;
