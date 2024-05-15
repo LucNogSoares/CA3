@@ -1,5 +1,18 @@
+<?php 
+
+function addPageLink($uri, $name) {
+  $urlpoints = explode('/', $_SERVER['REQUEST_URI']);
+  $page = $urlpoints[array_key_last($urlpoints)];
+  $page = explode('?', $page);
+  $page = $page[key($page)];
+
+  $class = $page === $uri ? "active" : "";
+  echo "<a href='$uri' class='$class'>$name</a>";
+}
+
+?>
 <nav class="topnav" id="myTopnav">
-  <a href="index.php" class="active">Home</a>
+  <?php addPageLink("index.php", "Home") ?>
   <div class="dropdown">
     <button class="dropbtn">
       Properties
@@ -18,9 +31,9 @@
     ?>
     </div>
   </div>
-  <a href="testimonials.php">Testimonials</a>
-  <a href="about.php">About Us</a>
-  <a href="contact.html">Contact Us</a>
+  <?php addPageLink("testimonials.php", "Testimonials</") ?>
+  <?php addPageLink("about.php", "About Us") ?>
+  <?php addPageLink("contact.php", "Contact Us") ?>
   <a
     href="javascript:void(0);"
     style="font-size: 15px"
