@@ -1,5 +1,4 @@
 <?php include_once('head.php'); ?>
-<main>
 <?php
 
 $sql="INSERT INTO comment (title, content, author_name, author_email)

@@ -160,6 +160,24 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   }
 }
 
+.avatar-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .avatar {
+    border: 1px solid black;
+    padding: 20px 20px 0 20px;
+    text-align: center;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+}
+
 @media (max-width: 768px){
 
   .property-details {
