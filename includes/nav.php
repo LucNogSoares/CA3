@@ -7,12 +7,18 @@
     </button>
     <div class="dropdown-content">
       <a href="properties.php">All Properties</a>
-      <a href="properties.php?categoryid=1">Residential</a>
-      <a href="properties.php?categoryid=2">Commercial</a>
-      <a href="properties.php?categoryid=3">Sites</a>
+      <?php 
+    if($stmt = mysqli_query($conn, "SELECT * FROM category")) {
+        while($category=mysqli_fetch_array($stmt)) {
+            echo "<a href='properties.php?categoryid={$category['categoryid']}'>{$category['categoryname']}</a>";
+        }
+    } else {
+        echo "An error occurred, try again!";
+    }
+    ?>
     </div>
   </div>
-  <a href="getcomments.php">Testimonials</a>
+  <a href="testimonials.php">Testimonials</a>
   <a href="about.php">About Us</a>
   <a href="contact.html">Contact Us</a>
   <a

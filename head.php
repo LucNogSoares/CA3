@@ -10,5 +10,5 @@
 <body>
 <div id="container">
 <?php include("includes/header.html");?>
-<?php include("includes/nav.html");?>
+<?php include("includes/nav.php");?>
 <main>

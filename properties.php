@@ -1,20 +1,26 @@
 <?php include_once('head.php') ?>
+<?php 
 
-<div id="search-card">
-  <h2>Find Your Property...</h2>
-  <form action="properties.php" method="get" id="properties-search">
-    <input type="search" name="search" required>
-    <button type="submit">
-      <i class="fa fa-search"></i>
-    </button>
-  </form>
-</div>
+if(isset($_GET['categoryid']) && $stmt = mysqli_query($conn, "SELECT * FROM category where categoryid = {$_GET['categoryid']}")) {
+    $category=mysqli_fetch_array($stmt);
+    $categoryname = $category ? $category['categoryname'] : "";
+}
+
+?>
 
 <div class="content">
-<h1>Recently Added</h1>
+<h1><?php echo isset($_GET['categoryid']) ? $categoryname : "All Properties" ?></h1>
     <div class="card-group">
     <?php 
-    if($stmt = mysqli_query($conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid order by propertyid desc limit 3")) {
+    $query = "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid";
+    if(isset($_GET['categoryid']) || isset($_GET['search'])) {
+        $query .= " WHERE";
+        if(isset($_GET['categoryid'])) $query .= " p.categoryid = {$_GET['categoryid']}";
+        if(isset($_GET['categoryid']) && isset($_GET['search'])) $query .= " and";
+        if(isset($_GET['search'])) $query .= " (p.address1 like '%{$_GET['search']}%' OR p.shortdescription like '%{$_GET['search']}%' OR p.longdescription like '%{$_GET['search']}%')";
+    }
+
+    if($stmt = mysqli_query($conn, $query)) {
         while($property=mysqli_fetch_array($stmt)) {
             echo "
             <div class='card'>
@@ -35,6 +41,9 @@
         }
     } else {
         echo "An error occurred, try again!";
+        echo '<pre>';
+        print_r(mysqli_error($conn));
+        echo '</pre>';
     }
     mysqli_close($conn);
     ?>
