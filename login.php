@@ -3,10 +3,10 @@
   <h1>Administrator Login</h1>
 <div class="box box-sm">
     <form method="post" id="login-form" class="base-form">
-        <label>Email:</label><br>
+        <label>Email:</label>
         <input required type="email" name="admin_email">
-        <label>Password:</label><br>
-        <input required type="password" name="password"><br>
+        <label>Password:</label>
+        <input required type="password" name="password">
         <input type="submit" name="submit" value="Submit">
     </form>
 </div>
