@@ -14,13 +14,13 @@
   <p>There are <strong><?php echo $pendingComments ?></strong> testimonials awaiting approval.</p>
   <div>
     <div class="my-4">
-      <a href="admin/properties.php" class="base-button">Manage Properties</a>
+      <a href="admin_properties.php" class="base-button">Manage Properties</a>
     </div>
     <div class="my-4">
-      <a href="admin/vendors.php" class="base-button">Manage Vendors</a>
+      <a href="admin_vendors.php" class="base-button">Manage Vendors</a>
     </div>
     <div class="my-4">
-      <a href="admin/testimonials.php" class="base-button">Manage Testimonials</a>
+      <a href="admin_testimonials.php" class="base-button">Manage Testimonials</a>
     </div>
     <div class="my-4">
       <a href="logout.php" class="base-button">Logout</a>

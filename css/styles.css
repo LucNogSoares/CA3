@@ -54,6 +54,16 @@ main a:hover {background-color: #878787; color: white;}
   }
 }
 
+.action-icon {
+  background-color: transparent !important;
+  color: black;
+}
+
+.action-icon:hover {
+  background-color: transparent !important;
+  color: #b4b4b8;
+}
+
 .base-button {
   background-color:#b4b4b8 !important;
   color: black;
