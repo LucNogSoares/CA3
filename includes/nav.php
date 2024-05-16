@@ -1,11 +1,14 @@
 <?php 
 
-function addPageLink($uri, $name) {
+function getUri() {
   $urlpoints = explode('/', $_SERVER['REQUEST_URI']);
   $page = $urlpoints[array_key_last($urlpoints)];
   $page = explode('?', $page);
-  $page = $page[key($page)];
+  return $page[key($page)];
+}
 
+function addPageLink($uri, $name) {
+  $page = getUri();
   $class = $page === $uri ? "active" : "";
   echo "<a href='$uri' class='$class'>$name</a>";
 }
@@ -13,7 +16,7 @@ function addPageLink($uri, $name) {
 ?>
 <nav class="topnav" id="myTopnav">
   <?php addPageLink("index.php", "Home") ?>
-  <div class="dropdown">
+  <div <?php echo getUri() === "properties.php" ? "class='dropdown active'" : "class='dropdown'" ?> >
     <button class="dropbtn">
       Properties
       <i class="fa fa-caret-down"></i>
