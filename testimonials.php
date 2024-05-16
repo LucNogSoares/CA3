@@ -22,21 +22,21 @@ echo "</table>";
 mysqli_close($conn);
 
 ?>
-<div id="addtestimonial">
+<div id="addtestimonial" class="box box-sm my-4">
   <h3>Add a Testimonial</h3>
   <p>Please leave your feedback on your experience of our site. We appreciate your feedback and
     take all your comments into consideration! </p>
     <!--form for user to enter feedback -->
-    <form method="post" action="process.php" id="commentform">
+    <form method="post" action="process.php" class="base-form">
       <label>Title: </label>
-      <input type="text" name="title" required="required"><br>
+      <input type="text" name="title" required="required">
 <label>Content: </label>
-<textarea name="content" rows="8" cols="30" ></textarea><br>
+<textarea name="content" rows="8" cols="30" ></textarea>
 <label>Name:</label>
-<input type="text" name="author_name"><br>
+<input type="text" name="author_name">
 <label>Email: </label>
-<input type="email" name="author_email"><br>
-<input type="submit" id="mysubmit" name="submit" value="Add Comment">
+<input type="email" name="author_email">
+<button class="base-button w-full" type="submit" id="mysubmit" name="submit">Add Comment</button>
 </form>
 </div>
 </main>

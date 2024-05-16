@@ -4,7 +4,7 @@
 <div class="content">
     <div class="pageTitleBox">
         <h1>Administrator - Manage Properties</h1>
-        <a href="admin.php" class="base-button">Back to Admin Home</a>
+        <a href="admin_property.php" class="base-button">Add Property</a>
     </div>
 <?php 
 $result=mysqli_query($conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid");

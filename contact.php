@@ -3,21 +3,21 @@
 <h1>Contact us</h1>
 <div id="contact-page">
 
-<div class="box">
+<div id="contact-box" class="box">
   <?php 
     if(isset($_POST['submit'])) {
         echo "<h2>Thank you for your message. We will contact you soon.</h2>";
     }
   ?>
   <h3>Leave a Message</h3>
-    <form method="post" id="contact-form">
-        <label>Name:</label><br>
+    <form method="post" class="base-form">
+        <label>Name:</label>
         <input required type="text" name="name">
-        <label>Phone:</label><br>
+        <label>Phone:</label>
         <input required type="tel" name="phone">
-        <label>Email: </label><br>
+        <label>Email: </label>
         <input required type="email" name="email">
-        <label>Message: </label><br>
+        <label>Message: </label>
         <textarea  requiredname="message" rows="8" cols="30" ></textarea>
         <input type="submit" name="submit" value="Submit">
     </form>
