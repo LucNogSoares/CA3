@@ -16,6 +16,11 @@
 </body>
 </html>
 <?php 
+
+  if(isset($_SESSION['admin_email'])) {
+    header("location: admin.php");
+  }
+
   if(isset($_POST['submit'])) {
     if(isset($_POST['admin_email']) && isset($_POST['password'])) {
       $query = "
@@ -25,6 +30,7 @@
       ";
       if($stmt = mysqli_query($conn, $query)) {
         if($property = mysqli_fetch_assoc($stmt)) {
+          $_SESSION['admin_email'] = $_POST['admin_email'];
           header("location: admin.php");
         } else {
           jsAlert("incorrect email or password.");
