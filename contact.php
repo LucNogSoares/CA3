@@ -3,7 +3,7 @@
 <h1>Contact us</h1>
 <div id="contact-page">
 
-<div id="contact-box" class="box">
+<div class="box">
   <?php 
     if(isset($_POST['submit'])) {
         echo "<h2>Thank you for your message. We will contact you soon.</h2>";

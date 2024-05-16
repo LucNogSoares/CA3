@@ -1,5 +1,7 @@
 <?php 
 
+include_once('utils.php');
+
 function connectDB() 
 {
   $server="localhost";

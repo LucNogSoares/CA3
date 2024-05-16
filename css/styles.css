@@ -210,6 +210,33 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   }
 }
 
+.box-lg {
+  width: 100%;
+  max-width: 1024px;
+}
+
+.box-md {
+  width: 100%;
+  max-width: 768px;
+}
+
+.box-sm {
+  width: 100%;
+  max-width: 500px;
+}
+
+.base-form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  input, textarea {
+    width: 100%;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 768px){
 
   .property-details {
