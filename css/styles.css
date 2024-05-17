@@ -282,20 +282,6 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   background-color: transparent !important;
 }
 
-.card-action button {
-  color:white;
-  background-color:#b4b4b8;
-  border: none;
-  padding: 8px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.card-action button:hover {
-  transition: 1s;
-  background-color:#939396;
-}
-
 .category {
   border: 1px solid black;
   padding: 4px;

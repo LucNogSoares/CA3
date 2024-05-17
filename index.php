@@ -28,7 +28,7 @@
                 <p>{$property['shortdescription']}</p>
             </div>
             <div class='card-action'>
-                <a href='property.php?propertyid={$property['propertyid']}'><button>More Details</button></a>
+                <a href='property.php?propertyid={$property['propertyid']}'><button class='base-button'>More Details</button></a>
             </div>
         </div>
             ";
