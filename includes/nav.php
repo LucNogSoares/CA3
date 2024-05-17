@@ -24,7 +24,7 @@ function addPageLink($uri, $name) {
     <div class="dropdown-content">
       <a href="properties.php">All Properties</a>
       <?php 
-    if($stmt = mysqli_query($conn, "SELECT * FROM category")) {
+    if($stmt = mysqli_query(DB::$conn, "SELECT * FROM category")) {
         while($category=mysqli_fetch_array($stmt)) {
             echo "<a href='properties.php?categoryid={$category['categoryid']}'>{$category['categoryname']}</a>";
         }

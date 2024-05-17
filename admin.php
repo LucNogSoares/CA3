@@ -2,12 +2,12 @@
 <?php include_once('auth.php'); ?>
 <?php 
   $pendingComments = 0;
-  if($stmt = mysqli_query($conn, "SELECT count(id) total FROM comment WHERE status = 'pending'")) {
+  if($stmt = mysqli_query(DB::$conn, "SELECT count(id) total FROM comment WHERE status = 'pending'")) {
     $pendingComments = mysqli_fetch_assoc($stmt)['total'];
   } else {
       echo "An error occurred, try again!";
   }
-  mysqli_close($conn);
+  DB::close();
 ?>
 <div class="content">
   <h1>Administrator Home</h1>

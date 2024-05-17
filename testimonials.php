@@ -2,7 +2,7 @@
 
 <?php 
 $sql="select * from comment WHERE status='planned'";
-$result=mysqli_query($conn, $sql);
+$result=mysqli_query(DB::$conn, $sql);
 echo "<table>";
 echo "<tr>
  <th> Title</th>
@@ -19,7 +19,7 @@ echo "<tr>
 </tr>";
 }
 echo "</table>";
-mysqli_close($conn);
+DB::close();
 
 ?>
 <div id="addtestimonial" class="box box-sm my-4">

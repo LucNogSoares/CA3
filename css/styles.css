@@ -76,6 +76,7 @@ main a:hover {background-color: #878787; color: white;}
   margin: 0;
   box-sizing: border-box;
   height: 100%;
+  cursor: pointer;
 }
 
 .base-button:hover {
@@ -247,8 +248,9 @@ box-shadow: 0 8px 16px 0 #adbbe0;
 }
 
 .base-form {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column !important;
   gap: 10px;
 
   input, textarea, select {
@@ -266,7 +268,32 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   }
 }
 
+.compact-form {
+  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  justify-content: space-between;
+  
+  > .group-form {
+    width: 49% !important;
+  }
+}
+
+.submission-box {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media (max-width: 768px){
+  .compact-form {
+    flex-direction: column !important;
+  
+    > .group-form {
+      width: 100% !important;
+    }
+  }
 
   #contact-page {
     flex-direction: column;

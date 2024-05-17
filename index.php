@@ -14,7 +14,7 @@
 <h1>Recently Added</h1>
     <div class="card-group">
     <?php 
-    if($stmt = mysqli_query($conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid order by propertyid desc limit 3")) {
+    if($stmt = mysqli_query(DB::$conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid order by propertyid desc limit 3")) {
         while($property=mysqli_fetch_array($stmt)) {
             echo "
             <div class='card'>
@@ -36,7 +36,7 @@
     } else {
         echo "An error occurred, try again!";
     }
-    mysqli_close($conn);
+    DB::close();
     ?>
     </div> 
 </div>

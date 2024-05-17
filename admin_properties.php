@@ -7,7 +7,7 @@
         <a href="admin_property.php" class="base-button">Add Property</a>
     </div>
 <?php 
-$result=mysqli_query($conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid");
+$result=mysqli_query(DB::$conn, "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid");
 echo "<table>";
 echo "<tr>
 <th>#</th>
@@ -37,7 +37,7 @@ class='fa fa-trash action-icon'
 </tr>";
 }
 echo "</table>";
-mysqli_close($conn);
+DB::close();
 ?>
 </div>
 </main>

@@ -16,7 +16,7 @@ if(!isset($_GET['propertyid'])) {
     <?php 
     $query = "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid where p.propertyid = {$_GET['propertyid']}";
 
-    if($stmt = mysqli_query($conn, $query)) {
+    if($stmt = mysqli_query(DB::$conn, $query)) {
         if($property = mysqli_fetch_assoc($stmt)) {
             $address = htmlspecialchars($property['address1']);
             $googleMapsUrl = "https://www.google.com/maps?q=" . urlencode($address) . "&output=embed";
@@ -41,7 +41,7 @@ if(!isset($_GET['propertyid'])) {
         print_r(mysqli_error($conn));
         echo '</pre>';
     }
-    mysqli_close($conn);
+    DB::close();
     ?> 
 </div>
 </main>

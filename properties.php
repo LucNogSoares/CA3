@@ -1,7 +1,7 @@
 <?php include_once('head.php') ?>
 <?php 
 
-if(isset($_GET['categoryid']) && $stmt = mysqli_query($conn, "SELECT * FROM category where categoryid = {$_GET['categoryid']}")) {
+if(isset($_GET['categoryid']) && $stmt = mysqli_query(DB::$conn, "SELECT * FROM category where categoryid = {$_GET['categoryid']}")) {
     $category=mysqli_fetch_array($stmt);
     $categoryname = $category ? $category['categoryname'] : "";
 }
@@ -20,7 +20,7 @@ if(isset($_GET['categoryid']) && $stmt = mysqli_query($conn, "SELECT * FROM cate
         if(isset($_GET['search'])) $query .= " (p.address1 like '%{$_GET['search']}%' OR p.shortdescription like '%{$_GET['search']}%' OR p.longdescription like '%{$_GET['search']}%')";
     }
 
-    if($stmt = mysqli_query($conn, $query)) {
+    if($stmt = mysqli_query(DB::$conn, $query)) {
         while($property=mysqli_fetch_array($stmt)) {
             echo "
             <div class='card'>
@@ -45,7 +45,7 @@ if(isset($_GET['categoryid']) && $stmt = mysqli_query($conn, "SELECT * FROM cate
         print_r(mysqli_error($conn));
         echo '</pre>';
     }
-    mysqli_close($conn);
+    DB::close();
     ?>
     </div> 
 </div>

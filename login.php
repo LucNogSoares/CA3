@@ -28,7 +28,7 @@
       WHERE admin_email = '{$_POST['admin_email']}'
       AND password = '{$_POST['password']}'
       ";
-      if($stmt = mysqli_query($conn, $query)) {
+      if($stmt = mysqli_query(DB::$conn, $query)) {
         if($property = mysqli_fetch_assoc($stmt)) {
           $_SESSION['admin_email'] = $_POST['admin_email'];
           header("location: admin.php");
@@ -41,7 +41,7 @@
         print_r(mysqli_error($conn));
         echo '</pre>';
       }
-      mysqli_close($conn);
+      DB::close();
     } else jsAlert("Fields are mandatory.");
   }
 ?>
