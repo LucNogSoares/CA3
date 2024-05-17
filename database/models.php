@@ -12,6 +12,12 @@ return [
     'bedrooms',
     'shortdescription',
     'longdescription'
+  ],
+  'vendor' => [
+    'vendor_email',
+    'vendor_firstname',
+    'vendor_surname',
+    'vendor_phone'
   ]
 ];
 

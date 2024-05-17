@@ -38,7 +38,7 @@
       } else {
         jsAlert("An error occurred, try again!");
         echo '<pre>';
-        print_r(mysqli_error($conn));
+        print_r(mysqli_error(DB::$conn));
         echo '</pre>';
       }
       DB::close();

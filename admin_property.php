@@ -11,7 +11,7 @@
         } else {
             echo "An error occurred, try again!";
             echo '<pre>';
-            print_r(mysqli_error($conn));
+            print_r(mysqli_error(DB::$conn));
             echo '</pre>';
         }
     }
@@ -24,7 +24,7 @@
     } else {
         echo "An error occurred, try again!";
         echo '<pre>';
-        print_r(mysqli_error($conn));
+        print_r(mysqli_error(DB::$conn));
         echo '</pre>';
     }
 
@@ -36,7 +36,7 @@
     } else {
         echo "An error occurred, try again!";
         echo '<pre>';
-        print_r(mysqli_error($conn));
+        print_r(mysqli_error(DB::$conn));
         echo '</pre>';
     }
 
