@@ -115,7 +115,7 @@
         </div>
         <div class="group-form">
             <label for="bedrooms">Bedrooms</label>
-            <input type="number" required placeholder="Bedrooms goes here..." name="bedrooms" <?php echo $property ? "value='{$property['bedrooms']}'" : "" ?>>
+            <input type="number" placeholder="Bedrooms goes here..." name="bedrooms" <?php echo $property ? "value='{$property['bedrooms']}'" : "" ?>>
         </div>
         <div class="group-form">
             <label for="shortdescription">Short Description</label>
