@@ -30,7 +30,7 @@ href='admin_property.php?propertyid={$row['propertyid']}'
 class='fa fa-pencil action-icon'
 ></a>
 <a
-href='delete_property.php?propertyid={$row['propertyid']}'
+href='?delete_property={$row['propertyid']}'
 class='fa fa-trash action-icon'
 ></a>
 </td>
@@ -39,8 +39,27 @@ class='fa fa-trash action-icon'
 echo "</table>";
 DB::close();
 ?>
+
+<div id="deletePropertyModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content box-sm">
+        <p>Are you sure you want to delete this property #<strong><?php echo $_GET['delete_property'] ?></strong>? </p>
+        <br>
+        <div class="flex gap-1 justify-content-between w-full">
+            <a href="admin_properties.php" class="w-half base-button modal-close text-center">CANCEL</a>
+            <a <?php echo "href='delete_property.php?propertyid={$_GET['delete_property']}'"  ?> class="w-half base-button btn-danger text-center">YES, DELETE</a>
+        </div>
+    </div>
+</div>
+
 </div>
 </main>
 <?php include("includes/footer.html");?>
 </body>
 </html>
+<?php 
+    if(isset($_GET['delete_property'])){
+        echo "<script>openModal('deletePropertyModal')</script>";
+    }
+
+?>

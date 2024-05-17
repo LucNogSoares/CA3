@@ -74,6 +74,13 @@ class DB
 
     return $this->execQuery();
   }
+
+  public function delete()
+  {
+    $this->sql = "DELETE FROM `{$this->table_name}` WHERE {$this->whereRaw}";
+
+    return $this->execQuery();
+  }
   
   protected function execQuery()
   {
