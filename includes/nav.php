@@ -37,6 +37,21 @@ function addPageLink($uri, $name) {
   <?php addPageLink("testimonials.php", "Testimonials</") ?>
   <?php addPageLink("about.php", "About Us") ?>
   <?php addPageLink("contact.php", "Contact Us") ?>
+  <?php if(isset($_SESSION['admin_email'])) { ?>
+    <div <?php echo getUri() === "admin.php" ? "class='dropdown active'" : "class='dropdown'" ?> >
+    <button class="dropbtn">
+      Admin
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="admin.php">Admin Home</a>
+      <a href="admin_properties.php">Manage Properties</a>
+      <a href="admin_vendors.php">Manage Vendors</a>
+      <a href="admin_testimonials.php">Manage Testimonials</a>
+      <a href="logout.php">Logout</a>
+    </div>
+  </div>
+  <?php } ?>
   <a
     href="javascript:void(0);"
     style="font-size: 15px"
