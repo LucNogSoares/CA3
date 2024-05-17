@@ -18,6 +18,15 @@ return [
     'vendor_firstname',
     'vendor_surname',
     'vendor_phone'
+  ],
+  'comment' => [
+    'id',
+    'title',
+    'content',
+    'author_name',
+    'author_email',
+    'created_at',
+    'status'
   ]
 ];
 

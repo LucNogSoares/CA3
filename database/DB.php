@@ -46,7 +46,7 @@ class DB
     foreach($this->model as $i => $column){
       $separator = $i == $lastIndex ? "" : ",";
       $select .= "`$column`$separator";
-      $value = $_POST[$column] ? "'$_POST[$column]'" : "NULL";
+      $value = $values[$column] ? "'$values[$column]'" : "NULL";
       $values .= $value.$separator;
     }
 
@@ -66,7 +66,22 @@ class DB
     $lastIndex = count($this->model) - 1;
     foreach($this->model as $i => $column){
       $separator = $i == $lastIndex ? "" : ",";
-      $value = $_POST[$column] ? "'$_POST[$column]'" : "NULL";
+      $value = $values[$column] ? "'$values[$column]'" : "NULL";
+      $setters .= "`$column` = $value$separator";
+    }
+
+    $this->sql = "UPDATE `{$this->table_name}` SET $setters WHERE {$this->whereRaw}";
+
+    return $this->execQuery();
+  }
+
+  public function patch($values)
+  {
+    $setters = '';
+    $lastIndex = count(array_keys($values)) - 1;
+    foreach(array_keys($values) as $i => $column){
+      $separator = $i == $lastIndex ? "" : ",";
+      $value = $values[$column] ? "'$values[$column]'" : "NULL";
       $setters .= "`$column` = $value$separator";
     }
 

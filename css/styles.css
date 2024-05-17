@@ -64,6 +64,42 @@ main a:hover {background-color: #878787; color: white;}
   color: #b4b4b8;
 }
 
+.action-icon-success {
+  background-color: transparent !important;
+  color: rgb(0, 158, 0) !important;
+}
+
+.action-icon-success:hover {
+  background-color: transparent !important;
+  color: rgb(8, 112, 8) !important;
+}
+
+.action-icon-danger {
+  background-color: transparent !important;
+  color: rgb(221, 19, 19) !important;
+}
+
+.action-icon-danger:hover {
+  background-color: transparent !important;
+  color: rgb(230, 13, 13) !important;
+}
+
+.text-success {
+  color: rgb(0, 158, 0) !important;
+}
+
+.text-hover-success:hover {
+  color: rgb(8, 112, 8) !important;
+}
+
+.text-danger {
+  color: rgb(221, 19, 19) !important;
+}
+
+.text-hover-danger:hover {
+  color: rgb(230, 13, 13) !important;
+}
+
 .w-full {
   width: 100%;
 }
