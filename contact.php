@@ -25,6 +25,7 @@
 <div id="reach-box" class="box">
   <h3>Reach us</h3>
   <p><strong>Email:</strong> contact@loremipsum.com</p>
+  <p><strong>Phone:</strong> 51515155451</p>
   <p><strong>Address:</strong> Dublin, Ireland</p>
   <iframe id='map' src='https://www.google.com/maps?q=dublin&output=embed' frameborder='0' allowfullscreen></iframe>
 </div>
