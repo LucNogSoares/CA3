@@ -311,7 +311,8 @@ box-shadow: 0 8px 16px 0 #adbbe0;
 .avatar-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 10px;
 
   .avatar {
     border: 1px solid black;
@@ -323,6 +324,10 @@ box-shadow: 0 8px 16px 0 #adbbe0;
       height: 70px;
       border-radius: 50%;
     }
+  }
+
+  .avatar.w-half {
+    width: calc(50% - 55px);
   }
 }
 
@@ -413,7 +418,19 @@ box-shadow: 0 8px 16px 0 #adbbe0;
   justify-content: flex-end;
 }
 
+@media (max-width: 1024px) {
+  .flex-column-lg {
+    flex-direction: column !important;
+  }
+}
+
+
+
 @media (max-width: 768px){
+  .flex-column-md {
+    flex-direction: column !important;
+  }
+
   .compact-form {
     flex-direction: column !important;
   
