@@ -41,16 +41,17 @@ class DB
   public function insert($values)
   {
     $select = '';
-    $values = '';
+    $inserts = '';
     $lastIndex = count($this->model) - 1;
     foreach($this->model as $i => $column){
       $separator = $i == $lastIndex ? "" : ",";
       $select .= "`$column`$separator";
       $value = $values[$column] ? "'$values[$column]'" : "NULL";
-      $values .= $value.$separator;
+      $inserts .= $value.$separator;
     }
 
-    $this->sql = "INSERT INTO `{$this->table_name}` ($select) VALUES ($values)";
+    
+    $this->sql = "INSERT INTO `{$this->table_name}` ($select) VALUES ($inserts)";
     return $this->execQuery();
   }
 
