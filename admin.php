@@ -12,18 +12,18 @@
 <div class="content">
   <h1>Administrator Home</h1>
   <p>There are <strong><?php echo $pendingComments ?></strong> testimonials awaiting approval.</p>
-  <div>
-    <div class="my-4">
-      <a href="admin_properties.php" class="base-button">Manage Properties</a>
+  <div class="w-full text-center flex  align-items-center flex-column">
+    <div class="my-1">
+      <a href="admin_properties.php" class="base-button w-button">Manage Properties</a>
     </div>
-    <div class="my-4">
-      <a href="admin_vendors.php" class="base-button">Manage Vendors</a>
+    <div class="my-1">
+      <a href="admin_vendors.php" class="base-button w-button">Manage Vendors</a>
     </div>
-    <div class="my-4">
-      <a href="admin_testimonials.php" class="base-button">Manage Testimonials</a>
+    <div class="my-1">
+      <a href="admin_testimonials.php" class="base-button w-button">Manage Testimonials</a>
     </div>
-    <div class="my-4">
-      <a href="logout.php" class="base-button">Logout</a>
+    <div class="my-1">
+      <a href="logout.php" class="base-button w-button">Logout</a>
     </div>
   </div>
   

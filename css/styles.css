@@ -2,29 +2,31 @@ body{background-color: white; margin: 0; font-family:Arial;}
 
 #container{margin: auto; 
     width: 80%;
-	background-color: #63acab;
-	border: 10px solid #63acab;
+	background-color: #E3E1D9;
+	border: 10px solid #E3E1D9;
 	}
 	
 header{
 	
   background-image: url("../images/header image.jpg");
+  background-size: cover;
+  background-position: center;
 	height: 110px;
 	}
 
 #sitename{ float: left; width: 300px; padding-top: 20px;}
 #logo {float:left; width: 150px;}
 	
-nav{background-color: #000000;
+nav{background-color: #b4b4b8;
 	clear: left;
       }
 	
-main {background-color: #c6e1e0;
+main {background-color: #f2efe5;
     padding: 10px;
 	min-height: 300px;
  }
 	
-main a {background-color: #63acab; color: white; text-decoration:none; padding:5px;}
+main a {background-color: #E3E1D9; color: white; text-decoration:none; padding:5px;}
 main a:hover {background-color: #878787; color: white;}
 
 .pageTitleBox {
@@ -53,6 +55,13 @@ main a:hover {background-color: #878787; color: white;}
     position: relative;
     left: -35px;
   }
+}
+
+.w-button {
+  width: 170px !important;
+  display: block;
+  text-align: center;
+  margin: 0;
 }
 
 .action-icon {
@@ -110,7 +119,7 @@ main a:hover {background-color: #878787; color: white;}
 }
 
 .base-button {
-  background-color:#b4b4b8 !important;
+  background-color:#C5AFA4 !important;
   border: 0;
   color: black;
   padding: 10px;
@@ -122,7 +131,7 @@ main a:hover {background-color: #878787; color: white;}
 
 .base-button:hover {
   transition: 1s !important;
-  background-color:#939396 !important;
+  background-color:#cfbfb6 !important;
   color: black;
 }
 
@@ -496,7 +505,7 @@ table td {padding: 10px;}
 table {width: 100%}
 
 table tr:nth-child(1) {
-	background-color: #63acab;
+	background-color: #E3E1D9;
     height: 40px;
 	}
 table tr {
@@ -504,7 +513,7 @@ table tr {
 	}
 #addtestimonial table {border: 0px;}
 #addtestimonial table tr td {padding: 0px; border: 0px;}
-#addtestimonial table tr {background-color: #c6e1e0; border: 0px;}
+#addtestimonial table tr {background-color: #f2efe5; border: 0px;}
 
 
 .show {display:block;}
@@ -529,13 +538,13 @@ input, textarea {margin-top: 10px; margin-left: 20px; }
 /*navbar styles w3schools*/
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #C5AFA4;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -543,8 +552,8 @@ input, textarea {margin-top: 10px; margin-left: 20px; }
 }
 
 .active {
-  background-color: #63acab;
-  color: white;
+  background-color: #E3E1D9;
+  color: black;
 }
 
 .topnav .icon {
@@ -560,7 +569,7 @@ input, textarea {margin-top: 10px; margin-left: 20px; }
   font-size: 17px;    
   border: none;
   outline: none;
-  color: white;
+  color:black;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -586,8 +595,8 @@ input, textarea {margin-top: 10px; margin-left: 20px; }
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+  background-color: #f2efe5;
+  color: black;
 }
 
 .dropdown-content a:hover {
