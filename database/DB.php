@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class DB
 {
@@ -12,19 +12,19 @@ class DB
 
   public function __construct($modelsFile = 'models.php')
   {
-    $this->models = require __DIR__.'/\/'.$modelsFile;
+    $this->models = require __DIR__ . '/\/' . $modelsFile;
     return $this;
   }
 
-  public static function connect($credentialsFile = 'credentials.php') 
+  public static function connect($credentialsFile = 'credentials.php')
   {
-    $credentials = require __DIR__.'/\/'.$credentialsFile;
+    $credentials = require __DIR__ . '/\/' . $credentialsFile;
     $server = $credentials['server'];
     $user = $credentials['user'];
     $password = $credentials['password'];
     $database = $credentials['database'];
-  
-    $conn = mysqli_connect($server,$user,$password);
+
+    $conn = mysqli_connect($server, $user, $password);
     mysqli_select_db($conn, $database);
 
     self::$conn = $conn;
@@ -32,7 +32,8 @@ class DB
     return $conn;
   }
 
-  public function table($table_name) {
+  public function table($table_name)
+  {
     $this->table_name = $table_name;
     $this->model = $this->models[$table_name];
     return $this;
@@ -43,14 +44,14 @@ class DB
     $select = '';
     $inserts = '';
     $lastIndex = count($this->model) - 1;
-    foreach($this->model as $i => $column){
+    foreach ($this->model as $i => $column) {
       $separator = $i == $lastIndex ? "" : ",";
       $select .= "`$column`$separator";
-      $value = $values[$column] ? "'$values[$column]'" : "NULL";
-      $inserts .= $value.$separator;
+      $value = isset($values[$column]) ? "'$values[$column]'" : "NULL";
+      $inserts .= $value . $separator;
     }
 
-    
+
     $this->sql = "INSERT INTO `{$this->table_name}` ($select) VALUES ($inserts)";
     return $this->execQuery();
   }
@@ -65,9 +66,9 @@ class DB
   {
     $setters = '';
     $lastIndex = count($this->model) - 1;
-    foreach($this->model as $i => $column){
+    foreach ($this->model as $i => $column) {
       $separator = $i == $lastIndex ? "" : ",";
-      $value = $values[$column] ? "'$values[$column]'" : "NULL";
+      $value = isset($values[$column]) ? "'$values[$column]'" : "NULL";
       $setters .= "`$column` = $value$separator";
     }
 
@@ -80,9 +81,9 @@ class DB
   {
     $setters = '';
     $lastIndex = count(array_keys($values)) - 1;
-    foreach(array_keys($values) as $i => $column){
+    foreach (array_keys($values) as $i => $column) {
       $separator = $i == $lastIndex ? "" : ",";
-      $value = $values[$column] ? "'$values[$column]'" : "NULL";
+      $value = isset($values[$column]) ? "'$values[$column]'" : "NULL";
       $setters .= "`$column` = $value$separator";
     }
 
@@ -97,7 +98,7 @@ class DB
 
     return $this->execQuery();
   }
-  
+
   protected function execQuery()
   {
     return mysqli_query(self::$conn, $this->sql);
@@ -110,10 +111,6 @@ class DB
       return true;
     } catch (\Throwable $th) {
       return false;
-    } 
+    }
   }
-
 }
-
-
-?>

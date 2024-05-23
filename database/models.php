@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
   'property' => [
@@ -20,7 +20,6 @@ return [
     'vendor_phone'
   ],
   'comment' => [
-    'id',
     'title',
     'content',
     'author_name',
@@ -29,5 +28,3 @@ return [
     'status'
   ]
 ];
-
-?>

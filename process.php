@@ -1,17 +1,18 @@
 <?php include_once('head.php'); ?>
 <?php
-
-$sql = "INSERT INTO comment (title, content, author_name, author_email)
-VALUES ('{$_POST['title']}', '{$_POST['content']}', '{$_POST['author_name']}', '{$_POST['author_email']}')";
-
-if (mysqli_query(DB::$conn, $sql)) {
-  echo "<h3>Testimonial Added!</h3>Thank you for your feedback. Our administrators moderate all
-comments and it will be attended to shortly<p>";
-  echo "<a class='base-button' href='testimonials.php'>Return to Testimonials page</a>";
-} else {
-  echo "An error occurred, try again!";
+if (isset($_POST['submit'])) {
+  $values = $_POST;
+  $values['status'] = 'pending';
+  if ((new DB())->table('comment')->insert($values)) {
+    echo "<h3>Testimonial Added!</h3>Thank you for your feedback. Our administrators moderate all comments and it will be attended to shortly<p>";
+    echo "<a class='base-button' href='testimonials.php'>Return to Testimonials page</a>";
+  } else {
+    echo "An error occurred, try again!";
+    echo '<pre>';
+    print_r(mysqli_error(DB::$conn));
+    echo '</pre>';
+  }
 }
-DB::close();
 ?>
 </main>
 <?php include("includes/footer.html"); ?>
