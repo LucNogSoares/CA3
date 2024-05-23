@@ -1,7 +1,7 @@
 <?php include_once('head.php') ?>
-<?php 
+<?php
 
-if(!isset($_GET['propertyid'])) {
+if (!isset($_GET['propertyid'])) {
     echo "propertyid is not defined.";
     exit;
 }
@@ -13,17 +13,17 @@ if(!isset($_GET['propertyid'])) {
         <h1>More details</h1>
         <a href="properties.php" class="base-button">Back to Properties</a>
     </div>
-    <?php 
+    <?php
     $query = "SELECT * FROM property p inner join category c on c.categoryid = p.categoryid where p.propertyid = {$_GET['propertyid']}";
 
-    if($stmt = mysqli_query(DB::$conn, $query)) {
-        if($property = mysqli_fetch_assoc($stmt)) {
+    if ($stmt = mysqli_query(DB::$conn, $query)) {
+        if ($property = mysqli_fetch_assoc($stmt)) {
             $address = htmlspecialchars($property['address1']);
             $googleMapsUrl = "https://www.google.com/maps?q=" . urlencode($address) . "&output=embed";
             echo "
-                <div class='property-details'>
+                <div class='property-details gap-4'>
                     <img src='{$property['image']}' alt='{$property['address1']}'>
-                    <div class='property-info'>
+                    <div class='property-info box'>
                         <h3>Address: {$property['address1']}</h3>
                         <h3>Price: € {$property['price']}</h3>
                         <p>{$property['longdescription']}</p>
@@ -33,7 +33,7 @@ if(!isset($_GET['propertyid'])) {
                 </div>
             ";
         } else {
-            echo "Property not found.";    
+            echo "Property not found.";
         }
     } else {
         echo "An error occurred, try again!";
@@ -42,10 +42,11 @@ if(!isset($_GET['propertyid'])) {
         echo '</pre>';
     }
     DB::close();
-    ?> 
+    ?>
 </div>
 </main>
-<?php include("includes/footer.html");?>
+<?php include("includes/footer.html"); ?>
 </div>
 </body>
+
 </html>
