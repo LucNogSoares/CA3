@@ -28,7 +28,7 @@ if (!isset($_GET['propertyid'])) {
                         <h3>Price: € {$property['price']}</h3>
                         <p>{$property['longdescription']}</p>
                         <div class='category'>{$property['categoryname']}</div>
-                        <iframe id='map' src='$googleMapsUrl' frameborder='0' allowfullscreen></iframe>
+                        <iframe class='w-full' id='map' src='$googleMapsUrl' frameborder='0' allowfullscreen></iframe>
                     </div>
                 </div>
             ";
