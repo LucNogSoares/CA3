@@ -14,7 +14,7 @@
       <input required type="email" name="email">
       <label>Message: </label>
       <textarea requiredname="message" rows="8" cols="30"></textarea>
-      <input type="submit" name="submit" value="Submit">
+      <button class="base-button w-full" type="submit" name="submit">Submit</button>
     </form>
   </div>
   <div id="reach-box" class="box">

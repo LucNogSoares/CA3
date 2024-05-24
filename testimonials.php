@@ -36,7 +36,7 @@ DB::close();
     <input type="text" name="author_name">
     <label>Email: </label>
     <input type="email" name="author_email">
-    <button class="base-button w-full" type="submit" id="mysubmit" name="submit">Submit</button>
+    <button class="base-button w-full" type="submit" name="submit">Submit</button>
   </form>
 </div>
 </main>
